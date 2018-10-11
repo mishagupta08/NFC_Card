@@ -22,7 +22,87 @@ namespace TTGarmentAdmin
 
         private string ListRegisteredVehicle = "ManageVehicle/List";
 
-        
+        private string ManageProductsListAction = "ManageProducts/FullList";
+
+        private string ManageProductAddAction = "ManageProducts/Add";
+
+        private string ManageProductEditAction = "ManageProducts/Edit";
+
+        private string GetProductByIdAction = "ManageProducts/ById";
+
+        private string ManagePointsLedgerAction = "ManagePoints/List";
+
+        private string ManageRetailerByIdAction = "ManageRetailer/ById";
+
+        private string ManageProductsStatusByIdAction = "ManageProducts/UpdateStatus";
+
+        private string ManagePromotonListAction = "ManagePromotion/FullList";
+
+        private string GetPromotionByIdAction = "ManagePromotion/ById";
+
+        private string AddPromotionAction = "ManagePromotion/Add";
+
+        private string EditPromotionAction = "ManagePromotion/Edit";
+
+        private string ManagePromotionStatusByIdAction = "ManagePromotion/UpdateStatus";
+
+        private string ManageRetailerEditAction = "ManageRetailer/Edit";
+
+        private string SaveImageAction = "SaveImage";
+
+        private string UpdateStatusAction = "UpdateStatus";
+
+        private string EncryptBarcodeAction = "EncryptBarcodes";
+
+        private string GetDistributerCityListAction = "GetDistributerCityList";
+
+        private string GetDistributerListAction = "GetDistributerByCityName/";
+
+        private string StateListAction = "StateList";
+
+        private string GetDashboardCountsAction = "GetDashboardCounts";
+
+        private string CityListAction = "CityList/";
+
+        private string ManageOrderListAction = "ManageOrder/List";
+
+        private string ManageMediaAddAction = "ManageMediaCategory/Add";
+
+        private string ManageMediaEditAction = "ManageMediaCategory/Edit";
+
+        private string ManageUploadedMediaAddAction = "ManageUploadedMedia/Add";
+
+        private string ManageUploadedMediaEditAction = "ManageUploadedMedia/Edit";
+
+        private string ManageMediaDeleteAction = "ManageMediaCategory/Delete";
+
+        private string ManageMediaListAction = "ManageMediaCategory/FullList";
+
+        private string ManageMediaActiveListAction = "ManageMediaCategory/List";
+
+        private string ManageUploadedMediaListAction = "ManageUploadedMedia/FullList";
+
+        private string ManageMediaByIdAction = "ManageMediaCategory/ById";
+
+        private string ManageMediaStatusByIdAction = "ManageMediaCategory/UpdateStatus";
+
+        private string ManageUploadedMediaByIdAction = "ManageUploadedMedia/ById";
+
+        private string ManageUploadedMediaStatusAction = "ManageUploadedMedia/UpdateStatus";
+
+        private string ListRetailerByPromotionAction = "ManagePromotionEntry/ListRetailerByPromotion";
+
+        private string UpdatePromotionEntriesAction = "ManagePromotionEntry/";
+
+        private string ManageRetailerImagesAction = "ManagePromotionEntry/RetailerImages";
+
+        private string UpdateRetailerImageStausAction = "ManagePromotionEntry/UpdateRetailerImageStatus";
+
+        private string ManageNotificationManagerAction = "ManageNotification";
+
+        private string ManageBannerAction = "ManageBanner/";
+
+        private string ManageAppVersionAction = "ManageAppVersion/";
 
         public async Task<AdminMaster> AdminLogin(LoginViewModel loginModel)
         {
@@ -83,20 +163,20 @@ namespace TTGarmentAdmin
             }
         }
 
-        public async Task<List<RetailerMaster>> GetRegisteredRetailer()
-        {
-            var result = await CallPostFunction(string.Empty, ManageRetailerListAction);
-            if (result == null || !result.Status)
-            {
-                return null;
-            }
-            else
-            {
-                result.ResponseValue = Decompress(result.ResponseValue);
-                var memberDetail = JsonConvert.DeserializeObject<List<RetailerMaster>>(result.ResponseValue);
-                return memberDetail;
-            }
-        }
+        //public async Task<List<RetailerMaster>> GetRegisteredRetailer()
+        //{
+        //    var result = await CallPostFunction(string.Empty, ManageRetailerListAction);
+        //    if (result == null || !result.Status)
+        //    {
+        //        return null;
+        //    }
+        //    else
+        //    {
+        //        result.ResponseValue = Decompress(result.ResponseValue);
+        //        var memberDetail = JsonConvert.DeserializeObject<List<RetailerMaster>>(result.ResponseValue);
+        //        return memberDetail;
+        //    }
+        //}
 
         public async Task<List<R_StateMaster>> GetStateList()
         {

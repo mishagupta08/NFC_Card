@@ -39,10 +39,10 @@ namespace TTGarmentAdmin.Controllers
 
                 this.repository = new Repository();
                 var user = await this.repository.AdminLogin(loginDetail);
-                if (user == null)
-                {
-                    return Json("Invalid Username and Password.");
-                }
+                //if (user == null)
+                //{
+                //    return Json("Invalid Username and Password.");
+                //}
 
                 // Session["LoginUserName"] = user.Username;
                 Session["LoginUserName"] = "Misha";

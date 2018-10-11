@@ -32,6 +32,8 @@ namespace TTGarmentAdmin.Models
 
         public List<R_ProductMaster> ProductList { get; set; }
 
+        public List<VehicleDetail> VehicleList { get; set; }
+
         public List<R_UploadedMedia> MediaList { get; set; }
 
         public List<R_Promotion> PromotionList { get; set; }
